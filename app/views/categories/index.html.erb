@@ -1,0 +1,16 @@
+<div class="inner_page">
+  <div class="signup">
+    <div class="tbl">
+      <table>
+        <tr>
+          <th><%= t "id" %></th>
+          <th><%= t "cate_name" %></th>
+          <th><%= t "cate_parent" %></th>
+          <th colspan="2" ><%= t "action" %></th>
+        </tr>
+        <%= render @categories %>
+      </table>
+    </div>
+    <%= will_paginate @categories %>
+  </div>
+</div>
