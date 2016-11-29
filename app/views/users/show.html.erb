@@ -1,0 +1,25 @@
+<div class="inner_page">
+  <div class="signup">
+    <div class="profile">
+      <div class="profile_detail">
+        <dir><%= gravatar_for @user, Settings.image_avatar %></dir>
+        <h2><%= @user.fullname %></h2>
+        <h2><%= @user.email %></h2>
+        <hr>
+        <%= link_to "#" do %>
+          <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-pencil"></i><%= t "follow" %>
+          </label>
+        <% end %>
+        <div class="space">|</div>
+        <%= link_to user_path(@user.id), method: :delete,
+          data: {confirm: t "sure"} do %>
+          <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-trash"></i><%= t "unfollow" %>
+          </label>
+        <% end %>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

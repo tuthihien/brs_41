@@ -1,0 +1,26 @@
+<div class="inner_page">
+  <div class="signup">
+    <h1><%= t "sign_up" %></h1>
+      <%= form_for @user do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="form-group">
+        <%= f.text_field :email, placeholder: t"email", class: "input-text" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :fullname, placeholder: t"f_name",
+          class: "input-text" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, placeholder: t"pass",
+          class: "input-text" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation,
+          placeholder: t"conf_pass", class: "input-text" %>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-submit"><%= t "register" %></button>
+      </div>
+    <% end %>
+  </div>
+</div>
