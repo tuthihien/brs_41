@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   def self.following? other_user
     if login?
-      Relationship.following_other_user
+      Relationship.following_other_user current_user, other_user
     end
     false
   end

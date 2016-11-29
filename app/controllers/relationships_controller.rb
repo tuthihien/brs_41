@@ -19,7 +19,7 @@ class RelationshipsController < ApplicationController
   def load_user
     @user = User.find_by id: params[:followed_id]
     unless @user
-      flash[:danger]= t"not_user"
+      flash[:danger]= t "not_user"
       redirect_to root_url
     end
   end
