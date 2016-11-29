@@ -1,0 +1,17 @@
+<div class="inner_page">
+  <div class="signup">
+    <div class="tbl">
+    <table>
+      <tr>
+        <th><%= t".cate" %></th>
+        <th><%= t".title" %></th>
+        <th><%= t".author" %></th>
+        <th><%= t".image" %></th>
+        <th colspan="2"><%= t".action" %></th>
+      </tr>
+      <%= render @books %>
+    </table>
+    <%= will_paginate @books %>
+    </div>
+  </div>
+</div>

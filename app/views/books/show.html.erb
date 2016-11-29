@@ -1,0 +1,47 @@
+<div id="messages_product_view"></div>
+<div class="product-view">
+  <div class="product-essential">
+    <div class="product-img-box">
+      <%= image_tag @book.image.url %>
+    </div>
+    <div class="product-shop">
+      <div class="product-name">
+      <% if login? %>
+        <div class="buttonHolder">
+        <% unless check_rate @book.id, t"mark" %>
+          <%= link_to "", actives_path book_id: @book.id, key: t"mark",
+            class: "action tick", title: t"statuss", remote: true %>
+        <% end %>
+        <% unless check_rate @book.id, t"readed" %>
+          <%= link_to "", actives_path book_id: @book.id, key: t"readed",
+            class: "action heart", title: t"statuss", remote: true  %>
+        <% end %>
+        <% unless check_rate @book.id, t"favorite" %>
+          <%= link_to "", actives_path book_id: @book.id, key: t"favorite",
+            class: "action flower", title: t"statuss", remote: true  %>
+        <% end %>
+        </div>
+      <% end %>
+        <h1><%= t ".title" %> <%= @book.title %></h1>
+      </div>
+      <p class="availability in-stock"><%= t ".author" %>
+        <span><%= @book.author %></span>
+      </p>
+      <p class="availability-only">
+        <span title="Only 10000 left"><%= t ".number" %>
+          <strong><%= @book.num_of_page %></strong>
+        </span>
+      </p>
+      <p class="availability-only">
+        <span><%= ".pusblish" %> <strong><%= @book.publish_date %></strong></span>
+      </p>
+      <div class="clear"></div>
+      <%= render "ratings/rating" %>
+      <hr>
+      <h1><%= link_to t"write", new_review_path book_id: @book.id %></h1>
+      <div class="clear"></div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <%= render "reviews/list_review" %>
+</div>
