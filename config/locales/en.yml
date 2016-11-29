@@ -21,8 +21,91 @@
 
 en:
   hello: "Hello world"
-en:
+  success_create: "Success for Create!"
+  error_create: "Error for Create!"
+  update_success: "Update success!"
+  update_error: "Update Error!"
+  delete_success: "Delete success!"
+  success_approve: Success for Approve!
+  error_approve: Error for Approve!
+  cancel: Cancel
+  edit: "Edit"
+  delete: "Delete"
+  confirm: "Are you sure?"
+  book_title: "Book Title"
+  book_author: "Book Author"
+  num: "Number of page"
+  date: "Publish Date"
+  publish: Publish On
+  status: Status
+  author: "Author"
+  add: Add New Book
+  custom: Custom Upload
+  create: Create
+  error: Error
+  statuss: add your list Mark
+  mark: Mark
+  approve: Approve
+  watting: Watting
+  add_new_book: Add New Book
+  init_new_cate: Init New Cate
+  custom_up: Custom Up
+  create: Create
+  select_category: Select Category
+  readed: Readed
+  favorite: Favorite
+  write: Write Review...
+  rating: Rating
+  id: "ID"
+  cate_name: "Cate Name"
+  cate_parent: "Cate Parent"
+  action: "Action"
   layouts:
     application:
-      title: "Brs41"
+      titles: "Brs41"
+  categories:
+    edit:
+      edit_category: "Edit Category"
+      update: "Update"
+    new:
+      add_new: "Add New Category"
+      name: "Category Name"
+      create: "Create"
+  shared:
+    error_messages:
+      the_form: "The form contains"
+  book:
+    detail:
+      title: Title
+      author: Author
+      pusblish: Pusblish Only
+      quick: Quick Overview
+      our: Our business is very noble
+      and: and it has many traditions. That is why
+      we:  we have such a great number
+      of: of devoted clients all over the country.
+      it: It is a great pleasure to give people the knowledge
+      and: and the power of the intelligence
+      we_all: We all must remember that our forefathers didn’t have such unlimited abilities as we have.
+      add_to: Add To Cart
+    edit:
+      select: "Select Category"
+      edit_book: "Edit Book"
+      upload: "Custom Upload"
+      update: "Update"
+    index:
+      cate: "Category"
+      title: "Title"
+      author: "Author"
+      image: "Image"
+      action: "Action"
+      edit: "Edit"
+      delete: "Delete"
+      are: "Are you sure?"
+    new:
 
+    show:
+      title: Title
+      author: Author
+      pusblish: Pusblish Only
+      add_to: Add to Cart

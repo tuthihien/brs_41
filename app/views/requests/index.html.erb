@@ -1,0 +1,19 @@
+<div class="inner_page">
+  <div class="signup">
+    <div class="tbl">
+      <table>
+        <tr>
+          <th><%= t("cate_name") %></th>
+          <th><%= t("title") %></th>
+          <th><%= t("publish") %></th>
+          <th><%= t("author") %></th>-
+          <th><%= t("num") %></th>
+          <th><%= t("status") %></th>
+          <th><%= t("action") %></th>
+        </tr>
+        <%= render @requests %>
+      </table>
+      <%= will_paginate @requests %>
+    </div>
+  </div>
+</div>

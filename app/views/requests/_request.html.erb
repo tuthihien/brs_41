@@ -1,0 +1,23 @@
+<% @requests.each do |item| %>
+  <tr>
+    <td class="miniform">
+      <%= form_for Request.new, id: "approve" do |f| %>
+        <%= f.hidden_field :status, value: true %>
+        <%= f.hidden_field :id, value: item.id %>
+        <%= f.select :cate_name, Category.all.collect {|c| [ c.name, c.id ]},
+          :include_blank: item.cate_name %>
+        <%= f.submit t "approve", id: "approve" %>
+      <% end %>
+    </td>
+    <td><%= item.title %></td>
+    <td><%= item.publish_date %></td>
+    <td><%= item.author %></td>
+    <td><%= item.num_of_page %></td>
+    <% if item.status %>
+      <td><%= t "approve" %></td>
+    <% else %>
+      <td><%= t "watting" %></td>
+    <% end %>
+    <td><%= request_toggle item %></td>
+  </tr>
+<% end %>

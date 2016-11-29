@@ -1,0 +1,38 @@
+<div class="inner_page">
+  <div class="book">
+    <h1><%= t "add_new_book" %></h1><br>
+      <div class="bookform">
+      <%= form_for Request.new, :html :{:multipart: true } do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <div id="init_cate">
+          <label><%= t "init_new_cate" %></label>
+          <input type="checkbox" id="init_check">
+        </div>
+        <div id="cate_select">
+          <%= f.select :cate_name, Category.all.collect { |c|
+            [ c.name, c.name ] },
+            class: "blah", include_blank: t "select_category" %>
+        </div>
+        <%= f.text_field :cate_name, class: "input-text", id: "cate_name",
+          placeholder: t("init_new_cate") %>
+        <%= f.text_field :title, placeholder: t("book_title"),
+          class: "input-text" %>
+        <%= f.text_field :author, placeholder: t("book_author"),
+          class: "input-text" %>
+        <%= f.number_field :num_of_page, placeholder: t("num"),
+          class: "input-text" %>
+        <%= f.text_field :publish_date, class: "datepicker input-text " %>
+        <div>
+          <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i><% t "custom_upload" %>
+          </label>
+          <%= f.file_field :image, id: "file-upload", style: "display:none;" %>
+        </div>
+        <button type="submit" class="btn btn-submit"><%= t "create" %></button>
+      <% end %>
+      </div>
+    <div class="imgbook">
+      <%= image_tag "book.jpg",id: "imgtag", height: 225 %>
+    </div>
+  </div>
+</div>
