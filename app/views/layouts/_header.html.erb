@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="header">
+        <div class="top_row">
+          <div class="header-buttons">
+            <div class="header-button currency-list"></div>
+          </div>
+        </div>
+        <h1 class="logo">
+          <%= link_to image_tag("logo.gif") %>
+        </h1>
+        <div class="right_head">
+          <p class="welcome-msg"><%= t".welcome" %></p>
+          <div class="clear"></div>
+          <div class="head_row">
+            <ul class="links">
+              <li class="first"><a href="#" ><%= t".home" %></a></li>
+              <li><a href="#" ><%= t".book_store" %></a></li>
+              <li><%= link_to t(".login"), login_path %></li>
+              <li><%= link_to t(".sign_up"), new_user_path %></li>
+            </ul>
+            <form id="search_mini_form" action="" method="get">
+              <div class="form-search">
+                <label for="search"><%= t".search" %></label>
+                  <input id="search" type="text" name="q" class="input-text"/>
+                <button type="submit" title="Search" class="button">
+                  <strong><i class="fa fa-search"></i></strong>
+                </button>
+                <div id="search_autocomplete" class="search-autocomplete"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

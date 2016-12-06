@@ -21,8 +21,57 @@
 
 en:
   hello: "Hello world"
-en:
+
   layouts:
     application:
       title: "Brs41"
+    header:
+      welcome: "Welcome"
+      home: "Home"
+      book_store: "Book Store"
+      login: "Login"
+      sign_up: "Sign Up"
+      search: "Search"
 
+  sessions:
+    new:
+      sign_in: "Sign In"
+      email: "Email"
+      pass: "Password"
+      login: "Login"
+
+  shared:
+    _error_message:
+      form: "The form contains"
+
+  users:
+    index:
+      delete: "Delete"
+      sure: "Are you sure?"
+      profile: "View Profile"
+    new:
+      sign_up: "Sign Up"
+      email: "Email"
+      f_name: "Full name"
+      pass: "Password"
+      conf_pass: "Confirm Password"
+      register: "Register"
+    show:
+      sure: "Are you sure?"
+      follow: "Follow"
+      unfollow: "Unfollow"
+    _manager_user:
+      sure: "Are you sure?"
+
+  concerns:
+    application_controller:
+      login_continue: "You have login to continue!"
+    sessions_controller:
+      welcome: "Welcome!"
+      valid: "Username or Passwored not valid!"
+      logout: "You are Logout!"
+    users_controller:
+      success: "Success for Sign up."
+      please: "Please Sign up again!"
+      delete: "Success for Delete."
+      error: "Error!"

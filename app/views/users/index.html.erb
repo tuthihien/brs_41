@@ -1,0 +1,13 @@
+<div class="inner_page">
+  <div class="signup">
+    <% @users.each do |item| %>
+    <div class="userList">
+      <%= gravatar_for item, Settings.image_size %><br><br>
+      <h2><%= item.fullname %></h2>
+      <%= render "manager_user" %>
+      <%= link_to t "profile", item, class: "fa fa-eye" %>
+    </div>
+    <% end %><br>
+    <%= will_paginate @users %>
+  </div>
+</div>
