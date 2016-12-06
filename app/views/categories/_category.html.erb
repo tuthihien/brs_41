@@ -1,0 +1,18 @@
+<% @categories.each_with_index do |category, index| %>
+  <tr>
+    <td>
+      <%= index_continue params[:page], index, Settings.per_page %>
+    </td>
+    <td><%= category.name %></td>
+    <td><%= category.parent.name %></td>
+    <td>
+      <%= link_to t "edit", edit_category_path category,
+        class: "fa fa-pencil-square-o" %>
+    </td>
+    <td>
+      <%= link_to t "delete", category_path category, method: :delete,
+        data: {confirm: t ".confirm"}, class: "fa fa-pencil-square-o" %>
+    </td>
+  </tr>
+<% end %>
+<%= will_paginate @categories %>
