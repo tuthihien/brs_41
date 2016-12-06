@@ -1,0 +1,26 @@
+<div class="inner_page">
+  <div class="book">
+    <h1><%= t"add" %></h1><br>
+    <div class="bookform">
+      <%= form_for @book, html: {multipart: true} do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <%= f.select :category_id, @categories.collect { |c| [ c.name, c.id ] },
+          class: "blah", include_blank: t "select_category" %>
+        <%= f.text_field :title, placeholder: t("book_title"), class: "input-text" %>
+        <%= f.text_field :author, placeholder: t("book_author"), class: "input-text" %>
+        <%= f.number_field :num_of_page, placeholder: t("num"), class: "input-text" %>
+        <%= f.text_field :publish_date, placeholder: t("date"), class: "input-text" %>
+        <div>
+          <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i><%= t"custom" %>
+          </label>
+          <%= f.file_field :image, id: "file-upload", style: "display:none;", onchange: "previewFile()" %>
+        </div>
+        <button type="submit" class="btn btn-submit"><%= t "create" %></button>
+      <% end %>
+    </div>
+    <div class="imgbook">
+      <%= image_tag "book.jpg", id: "imgtag" %>
+    </div>
+  </div>
+</div>
