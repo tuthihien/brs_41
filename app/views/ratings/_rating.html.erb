@@ -1,0 +1,20 @@
+<div class="rating">
+  <h4><%= t "ratings" %></h4>
+  <div class="starrr" id="star2"></div>
+  <% form_tag controller: "ratings", action: "create", method: "post" do %>
+    <div id="ip_rating">
+      <%= hidden_field_tag :rating, value: @book.rating.to_i,
+        id: "star2_input" %>
+    </div>
+    <div id="rs_rating">
+      <div id="old_rating">
+        (<% "%0.1f" % @book.rating %>)
+      </div>
+    </div>
+    <%= t "rating_star" %>
+    <%= hidden_field_tag :book_id, value: @book.id %>
+    <% if login? && !rate? @book.id, t "rating" %>
+      <%= submit_tag "Rating", class: "btn btn-submit", id: "rating_btn" %>
+    <% end %>
+  <% end %>
+</div>
