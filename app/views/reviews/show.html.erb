@@ -1,0 +1,20 @@
+<div class="review">
+  <h1><%= @review.title %></h1>
+  <% if login? && current_user.id == @review.user_id %>
+    <div class="review-edit">
+      <%= link_to t("edit"), edit_review_path(@review.id) %>
+    <div class="space">|</div>
+    <%= link_to t("delete"), review_path(@review.id), method: :delete,
+      data: {confirm: t("confirm")} %>
+    </div>
+  <% end %><hr>
+  <dir><%= @review.content %></dir><hr>
+  <div class="comment">
+    <div id="comment-form">
+      <%= render "comments/form" %>
+    </div>
+    <div id="commentslist">
+      <%= render "comments/list_comment" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="product-collateral" >
+  <h1><%= link_to t("list_review"), reviews_path %></h1>
+  <div class="box-collateral box-description">
+    <h2>
+      <% @reviews.each do |item| %>
+        <%= link_to item.title, item %>
+        <p><%= item.content %></p><hr>
+      <% end %>
+    </h2>
+  </div>
+</div>

@@ -40,6 +40,16 @@ en:
       pass: "Password"
       login: "Login"
 
+  reviews:
+    show:
+      edit: Edit
+      delete: Delete
+    edit:
+      new_review: New review
+      title: Title
+      content: Content
+      update_review: Update
+
   shared:
     _error_message:
       form: "The form contains"
